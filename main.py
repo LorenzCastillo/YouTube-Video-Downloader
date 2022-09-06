@@ -9,8 +9,11 @@ def progress(stream, chunk, bytes_remaining):
     if (percentage_of_completion == 100):
         print("Successfully downloaded '" + yt.title + "' to \n" + filePath + "\n")
 
-# User Input
-filePath = "/Users/lorenzcastillo/Downloads/Videos/Youtube Videos"
+## Macbook File Path
+# filePath = "/Users/lorenzcastillo/Downloads/Videos/Youtube Videos"
+
+## Desktop File Path
+filePath = "D:/Adobe Premiere Pro/Downloads"
 
 link = input("\nEnter the YouTube link you want to download: \n")
 yt = YouTube(link)
@@ -20,5 +23,3 @@ yt.register_on_progress_callback(progress)
 
 yd = yt.streams.filter(progressive=True).get_highest_resolution()
 yd.download(filePath)
-
-
